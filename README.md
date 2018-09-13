@@ -8,9 +8,9 @@ A set of small tests to ensure your ZeroStack cluster is running properly.
 
 ## Install
 ### pip
-1. # pip install zspython
-2. # pip install post-install-test
+1. pip install zspython
+2. pip install post-install-test
 
 ### Git
-1. # git clone 
-2. # git clone
+1. git clone https://github.com/Zerostack-open/post-install-test.git
+2. git clone https://github.com/Zerostack-open/zspython.git
