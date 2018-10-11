@@ -32,5 +32,5 @@ export OS_REGION='blah'
 1. git clone https://github.com/Zerostack-open/post-install-test.git
 
 ## Run tests
-$ source ~/zsrc.txt
+$ source ~/zsrc.txt +
 $ python zs-post-install.py 
