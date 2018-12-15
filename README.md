@@ -1,36 +1,86 @@
-# post-install-test
+ZeroStack Post Install Test
+===========================
+
 A set of small tests to ensure your ZeroStack cluster is running properly.
 
-## Dependencies
+**Dependencies**
+
 In order to run the post install tests download the cloud admin RC and certificate files out of the admin.local BU.
+
 1. Zerostack rc file
 2. Zerostack key file
 
-### RC File
+**RC File**
 
-Use the below example to configure your RC file. <br />
-<br />
-USER_NAME=billybob <br />
-USER_PASSWD=mypassword <br />
-USER_DOMAIN=admin.local <br />
-PROJECT_DOMAIN=admin.local <br />
-USER_PROJECT=zs_default <br />
-ZS_CERT_FILE=~/zs_Certificate_ca.bundle <br />
-export OS_AUTH_URL=https://console.zerostack.com/os/6366ac07-6c56-5000-991d-b75607d02f32/regions/e333d4a5-4a74-6bfc-9f1f-1bd66da3f9e7/keystone/v3 <br />
-export OS_CACERT=$ZS_CERT_FILE <br />
-export OS_IDENTITY_API_VERSION=3 <br />
-export OS_IMAGE_API_VERSION=1 <br />
-export OS_VOLUME_API_VERSION=2 <br />
-export OS_USERNAME=$USER_NAME <br />
-export OS_USER_DOMAIN_NAME=$USER_DOMAIN <br />
-export OS_PASSWORD=$USER_PASSWD <br />
-export OS_PROJECT_NAME=$USER_PROJECT <br />
-export OS_PROJECT_DOMAIN_NAME=$PROJECT_DOMAIN <br />
-export OS_REGION='blah' <br />
+Pull the RC file from the newly installed ZeroStack cluster.
 
-## Git
-1. git clone https://github.com/Zerostack-open/post-install-test.git
+LogIn -> Click on BU List -> Click on admin.local BU -> Click on Project -> zs_default -> More tab -> API
 
-## Run tests
+**Run Tests**
+
 $ source ~/zsrc.txt <br />
-$ python zs-post-install.py 
+
+$ zs-post-install
+
+
+**OS Requierments**
+
+CentOS 7
+
+$ yum install -y epel-release,python-pip,hdparm
+
+Ubuntu 14.04 / 16.04 / 18.04
+
+$ apt install -y python-pip
+
+**Pre-flight Prerequisites**
+
+PIP will install all of the packages needed to run the ZS-Post-Install test, if they are not present.
+
+$ pip install urllib3==1.24.1
+
+**Installing**
+
+To install the preflight check on the system, follow these steps. Make sure all of the pre-requisite packages have been installed.
+
+
+$ pip install zs-postinstall-test
+
+
+**Running the tests**
+
+Run the pre-flight check with the following command.
+
+
+$ zs-post-install
+
+Build and Submit
+----------------
+
+**GIT - development / nightly**
+
+1. git clone https://github.com/Zerostack-open/post-install-test.git
+2. cd zs-post-install-test
+3. python setup.py bdist_wheel
+
+**PIP - Development**
+
+1. sudo python -m pip install --upgrade pip setuptools wheel
+2. sudo python -m pip install tqdm
+3. sudo python -m pip install --user --upgrade twine
+
+
+Authors
+-------
+
+
+**Jonathan Arrance** - *Initial work* - [Zerostack-open](https://github.com/Zerostack-open)
+
+
+See also the list of [contributors](https://github.com/JonathanArrance) who participated in this project.
+
+
+License
+-------
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Zerostack-open/zs-preflight/blob/master/LICENSE) file for details
