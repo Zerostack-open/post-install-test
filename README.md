@@ -8,20 +8,25 @@ A set of small tests to ensure your ZeroStack cluster is running properly.
 In order to run the post install tests download the cloud admin RC and certificate files out of the admin.local BU.
 
 1. Zerostack rc file
-2. Zerostack key file
+2. Zerostack certificate file
 
-**RC File**
+**RC and Cert Files**
 
 Pull the RC file from the newly installed ZeroStack cluster.
 
 LogIn -> Click on BU List -> Click on admin.local BU -> Click on Project -> zs_default -> More tab -> API
 
+When you get the RC file, make sure to specify your password and the fully qualified path to the cert file.
+
+Set the OS_REGION variable to the name of your region.
+
 **Run Tests**
 
-$ source ~/zsrc.txt <br />
+$ source ~/zsrc.txt
 
 $ zs-post-install
 
+If you have already run the test, and would like to run it again, delete the PostInstall BU tat was created.
 
 **OS Requierments**
 
@@ -49,7 +54,7 @@ $ pip install zs-postinstall-test
 
 **Running the tests**
 
-Run the pre-flight check with the following command.
+Run the post install test with the following command.
 
 
 $ zs-post-install
@@ -83,4 +88,4 @@ See also the list of [contributors](https://github.com/JonathanArrance) who part
 License
 -------
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Zerostack-open/zs-preflight/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Zerostack-open/zs-post-install-test/blob/master/LICENSE) file for details

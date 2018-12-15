@@ -1,0 +1,8 @@
+README.md
+setup.py
+zs_postinstall_test.egg-info/PKG-INFO
+zs_postinstall_test.egg-info/SOURCES.txt
+zs_postinstall_test.egg-info/dependency_links.txt
+zs_postinstall_test.egg-info/requires.txt
+zs_postinstall_test.egg-info/top_level.txt
+zspostinstall/zs-post-install
