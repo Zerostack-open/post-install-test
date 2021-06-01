@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/Zerostack-open/zs-post-install-test",
     packages=setuptools.find_packages(),
     install_requires=[
-          'urllib3==1.24.1'
+          'urllib3==1.26.5'
       ],
     classifiers=(
         "Programming Language :: Python :: 2.7",
